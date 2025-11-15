@@ -1,0 +1,57 @@
+
+================================================================================
+EXECUTIVE SUMMARY: STATISTICAL TESTING RESULTS
+================================================================================
+
+PROJECT: Mitsui & Co. Commodity Prediction Challenge
+TEAM: Team 7, JNU School of Engineering
+DATE: 2025-11-15
+
+DATASET OVERVIEW:
+- Total Commodities: 142
+- Exchanges Covered: US, LME, FX, JPX
+- Time Series Length: 1961 observations
+- Missing Data: 2.60% average
+
+STATIONARITY ASSESSMENT:
+┌─────────────────────────┬─────────────┬─────────────────┬──────────────┐
+│ Test                    │ Raw Data    │ Transformed     │ Improvement  │
+├─────────────────────────┼─────────────┼─────────────────┼──────────────┤
+│ ADF (p < 0.05)          │   2.8%      │ 100.0%          │ + 97.2%       │
+│ KPSS (p > 0.05)         │   1.4%      │  99.3%          │ + 97.9%       │
+│ Both Confirm            │   1.4%      │  99.3%          │ + 97.9%       │
+└─────────────────────────┴─────────────┴─────────────────┴──────────────┘
+
+DISTRIBUTIONAL PROPERTIES:
+- Normal Distribution (Raw): 1.4%
+- Log-Normal Distribution (Raw): 1.4%
+- Mean Skewness: 0.291
+- Mean Kurtosis: -0.481
+
+AUTOCORRELATION ANALYSIS:
+- Raw Data Autocorrelated: 100.0%
+- Transformed Autocorrelated: 78.2%
+→ Justifies use of lagged features in predictive models
+
+TRANSFORMATION PIPELINE:
+1. Log Transformation: Xt = log(Pt)
+   - Stabilizes variance
+   - Converts multiplicative to additive effects
+
+2. First-Order Differencing: Yt = Xt - Xt-1
+   - Removes trends
+   - Achieves stationarity in 100.0% of series
+
+KEY RECOMMENDATIONS FOR MODELING:
+✓ Use log-transformed and differenced data (stationary)
+✓ Include lagged features (autocorrelation present)
+✓ Consider exchange-specific models (heterogeneous dynamics)
+✓ Apply CCI and other technical indicators (mean-reversion patterns)
+✓ Use robust imputation for outliers (preserve temporal continuity)
+
+CONCLUSION:
+The transformation pipeline successfully converts non-stationary commodity prices
+into stationary log-returns suitable for time series modeling. The improvement from
+2.8% to 100.0% stationarity validates the preprocessing approach.
+
+================================================================================
