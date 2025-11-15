@@ -1,0 +1,11 @@
+Python==3.9.7
+numpy==1.28.7
+pandas==2.3.3
+scipy==1.10.1
+scikit-learn==1.7.2
+xgboost==3.1.1
+statsmodels==0.14.5
+matplotlib==3.10.7
+seaborn==0.13.2
+kaggle==1.7.4.5
+unzip==1.0.0
