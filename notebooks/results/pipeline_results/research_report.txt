@@ -1,0 +1,23 @@
+
+### ABSTRACT ###
+This study presents a comprehensive commodity price prediction framework
+utilizing exchange-specific XGBoost models with log-normal transformation
+and stationarity conversion. Technical indicators (CCI) were
+incorporated to enhance predictive accuracy across four major exchanges:
+US, LME, FX, and JPX.
+
+### 1. STATISTICAL ANALYSIS ###
+  - No statistical analysis results available.
+
+### 2. METHODOLOGY ###
+  - Data Transformation: Log-normal → First-order differencing
+  - Technical Indicator: CCI
+  - Model: XGBoost with rolling window (size=7)
+  - Feature Selection: Optimal lags via ACF analysis (max=30)
+  - Outlier Treatment: Imputation (no data removal)
+
+### 3. RESULTS ###
+  - No model results available.
+
+### 4. CONCLUSIONS ###
+  - Unable to draw conclusions as no models were trained successfully.
